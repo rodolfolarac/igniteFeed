@@ -1,7 +1,7 @@
 export function Post({author, content}){
     return (
         <>
-            <h1>{author}</h1>
+            <strong>{author}</strong>
             <p>{content}</p>
         </>
     )
