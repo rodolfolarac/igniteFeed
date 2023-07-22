@@ -1,6 +1,6 @@
 import { Header } from "./components/Header"
 import { Sidebar } from "./components/Sidebar"
-import { Post } from "./Post"
+import { Post } from "./components/Post"
 
 import "../src/components/global.css"
 import styles from "../src/components/App.module.css"
@@ -31,3 +31,5 @@ export function App() {
   )
 }
 
+// Biblioteca de icones Phosphor icons 
+//npm install phosphor-react
