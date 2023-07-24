@@ -2,10 +2,21 @@ import { Trash } from "phosphor-react"
 import styles from "./Comment.module.css"
 import { ThumbsUp } from "@phosphor-icons/react"
 import { Avatar } from "./Avatar"
+import { useState  } from "react"
 
 export function Comment({ content, onDeleteComment }) {
+    const [likeCount, setLikeCount] = useState(0)
+
     const handleDeleteComment = () =>{
         onDeleteComment(content)
+    }
+
+    const handleLikeComment = () =>{
+        //método de sempre mostrar a renderização em tempo real, já que no
+        //React por padrão é mostrado o valor "anterior"
+        setLikeCount((state) => {
+            return state + 1;
+        })
     }
 
     return (
@@ -27,9 +38,9 @@ export function Comment({ content, onDeleteComment }) {
                     <p>{content}</p>
                 </div>
                 <footer>
-                    <button title="Deletar comentário">
+                    <button onClick={handleLikeComment} title="Deletar comentário">
                         <ThumbsUp />
-                        Aplaudir <span>20</span>
+                        Aplaudir <span>{likeCount}</span>
                     </button>
                 </footer>
             </div>
